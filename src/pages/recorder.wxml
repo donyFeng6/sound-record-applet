@@ -1,0 +1,26 @@
+<!--src/pages/recorder.wxml-->
+<view class='g-container'>
+  <image class='bg' wx:if='{{ThemeByList.theme.backgroundImage}}' src='{{Resource+ThemeByList.theme.backgroundImage}}'></image>
+  <view class='m-main m-Theme  m-record'>
+    <view class='header'>
+      <image class='avatar' src='{{UserInfo.avatarUrl}}'></image>
+      <view class='title'>{{ThemeByList.theme.title}}</view>
+    </view>
+    <view class='entity'>
+      <view class='c' wx:for="{{ThemeByList.theme.textlist}}" wx:key="this" wx:for-item="text">
+         {{text}} 
+      </view>
+    </view>
+    <view class='record'>
+      <view class='start' bindtap='RecorderManager'>
+        <view wx:if='{{isSatrtRecord == "pause"}}' class='b'></view>
+        <image class='icon' src='{{isSatrtRecord == "pause"?Resource+"static/image/img_recording_pressed@2x.png":Resource+"static/image/img_recording_normal@2x.png"}}'></image>
+        <text>{{RecordTimer.Time}}</text>
+      </view>
+
+      <view class='done' bindtap='RecorderDone'><image class='icon' src='{{Resource}}static/image/icon_complete@2x.png'></image> 完成</view>
+      <view class='reset' bindtap='resetRecorder'><image class='icon' src='{{Resource}}static/image/icon_again@2x.png'></image> 重录</view>
+    </view>
+    <image class='bg-wave' src='{{Resource}}static/image/img_bottom@2x.png'></image>
+  </view>
+</view>

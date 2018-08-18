@@ -1,0 +1,47 @@
+<!--src/pages/myRecord.wxml-->
+
+<view class='g-container'>
+  <image class='bg' src='{{MyRecordBg.backgroundImage}}'></image>
+  <view class='m-main m-Theme m-myRecord'>
+    <view class='header'>
+      <image class='avatar' src='{{UserInfo.avatarUrl}}'></image>
+      <view class='title'>{{UserInfo.nickName}}</view>
+    </view>
+    <view class='article'>
+      <view class='h3'>我的录音</view>
+      <scroll-view class='item' scroll-y lower-threshold="50" bindscrolltolower="MyRecordScroll">
+        <view class="list" wx:for="{{MyRecordList.list}}" wx:key="this" wx:for-item="item"bindtap='MyRecord'data-key='{{index}}'>
+          <image class="avatar" src='{{Resource + item.backgroundThumbImage}}'></image>
+          <view class="title">{{item.title}}</view>
+          <view class="d">{{item.duration}}<text class='t'>{{item.createDate}}</text></view>
+          <view catchtap='NoActionSheet'>
+            <view bindtap='ActionSheet' data-key='{{index}}' class='go'><image class='icon' src='{{Resource}}static/image/icon_more@2x.png'></image></view>
+          </view>
+        </view>
+        <button class='btn' open-type='getUserInfo' >需要获取授权</button>
+      </scroll-view>
+    </view>
+    <audio src="{{PlayAudio.recordUrl}}" action="{{PlayAudioAction}}" bindtimeupdate="playDurationCtr" bindended="endPlayAudio"  id="testHearMusic"></audio>
+  </view>
+  <view class='m-main m-recordTile m-sharen-Sheet {{RecordSheet.active}}'>
+    <view class='con'>
+      <view class='item'>
+        <view bindtap='DelRecordSheet' class='btn del'><image class='icon' src='{{Resource}}static/image/icon_del_pressed@2x.png'></image> 删除录音</view>
+        <view bindtap='MiffRecordSheet' class='btn miff'><image class='icon' src='{{Resource}}static/image/icon_editor_normal copy@2x.png'></image> 修改名称</view>
+      </view>
+      <button bindtap='closeRecordSheet' class='btn close' type='default'>取消</button>
+    </view>
+    <view bindtap='closeRecordSheet' class='shield'></view>
+  </view>
+  <view class='m-main m-recordTile {{MiffRecordTile.active}}'>
+    <view class='con'><form bindsubmit='MiffRecordTile'>
+      <text class='title'>修改名称</text>
+      <input type="text" name="title" class="form-control" maxlength="20" value='{{MiffRecordTile.title}}'></input>
+      <view class='foot'>
+        <button bindtap='closerecordTile' class='btn' type='default'>取消</button>
+        <button class='btn submit' form-type='submit' type='default'>确定</button>
+      </view>
+    </form></view>
+    <view bindtap='closerecordTile' class='shield'></view>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+/* src/index.wxss */
+@import './static/css/global.wxss';
+page{width:100vw; height: 100vh; overflow: hidden;}
+.g-container{position: fixed; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; }

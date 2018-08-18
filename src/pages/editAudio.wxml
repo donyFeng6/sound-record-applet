@@ -1,0 +1,54 @@
+<!--src/pages/editAudio.wxml-->
+<view class='g-container'>
+  <image class='bg' src='{{ThemeByList.theme.backgroundImage}}'></image>
+  <view class='m-main m-record m-audio {{ThemeByList.active}}'>
+    <view class='audio'>
+      <view class='header'>
+        <image class='hbg' src="{{Resource}}static/image/img_audio@2x.png"></image>
+        <image bindtap='playAudioFile' class='icon' src='{{Resource}}static/image/{{recordPlayMusic.status == "pause"?"icon_play_audio@2x.png":"icon_pause_audio@2x.png"}}'></image>
+        <text class='t'>{{recordPlayMusic.duration}}</text>
+      </view>
+      <view class='bgaudio take btn {{BgMusic.clas}}' bindtap='BgMusic'>
+        <view wx:if='{{BgMusic.text}}'>{{BgMusic.text}}<view wx:if='{{BgMusic.clas}}' class='trade'>更换</view></view>
+      </view>
+      <view class='whine take btn' bindtap='whineAdio'>
+        <text wx:if='{{whineAdio.text}}'>{{whineAdio.text}}</text>
+      </view>
+    </view>
+    <view class='record'>
+      <view class='start' bindtap='RecorderManager'><image class='icon' src='{{Resource}}static/image/btn_generate@2x.png'></image><text>生成</text></view>
+    </view>
+    <image class='bg-wave' src='{{Resource}}static/image/img_bottom@2x.png'></image>
+  </view>
+  <view class='m-main m-audio m-BgMusic {{BgMusic.active}}'>
+    <view class='BgMusic'>
+      <view class='item'>
+        <view class='take' wx:for="{{BgMusic.list}}" wx:key="this" wx:for-item="item">
+          <view bindtap='PlayBgMusic' data-key='{{index}}' class="vod go {{item.play == 'play'?'play':''}}"></view>
+          <view bindtap='ChangeBgMusic' data-key='{{index}}'>
+            <text wx:if='{{BgMusic.text}}'>{{item.title}}</text><radio class='r' value="{{index}}" checked="{{item.radio}}"/>
+          </view>
+        </view>
+      </view>
+      <!-- <button bindtap='cancelBgMusic' class='btn'>取消</button> -->
+    </view>
+    <view bindtap='closeBgMusicShield' class='shield'></view>
+  </view>
+  <view class='m-main m-audio m-audio-whine {{whineAdio.active}}'>
+    <view class='whine'>
+      <view class='talbe'>
+        <view bindtap='whineType' data-type='0' class='btn {{whineAdio.Type == "0"?"act":""}}'>人声滤镜</view>
+        <!-- <view bindtap='whineType' data-type='1' class='btn {{whineAdio.Type == "1"?"act":""}}'>环境滤镜</view> -->
+      </view>
+      <view class='list'>
+        <view bindtap='VoiceMusic' wx:for="{{whineAdio.list}}" wx:key="this" wx:for-item="item" data-key='{{index}}' class='a'>{{item.text}}</view>
+      </view>
+    </view>
+    <view bindtap='closeWhineShield' class='shield'></view>
+  </view>
+  <view class='m-bgmusic'>
+    <audio wx:if="{{PlayAudio.audioUrl}}" src="{{Resource + PlayAudio.audioUrl}}" action="{{PlayAudioAction}}" id="recordHearMusic" loop></audio>
+     <audio wx:if="{{recordAudio.audioUrl}}" src="{{recordAudio.audioUrl}}" action="{{RecordPlayAudioAction}}" bindended="RecordPlayEndAudio" bindtimeupdate="playDurationCtr" id="recordHearAudio"></audio> 
+  </view>
+</view>
+

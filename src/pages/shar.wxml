@@ -1,0 +1,40 @@
+<!--src/pages/shar.wxml-->
+<view class='g-container'>
+  <view class='m-loading {{loadingPage.active}}'>
+    <view class='header'>
+      <image class='record' src='{{Resource}}static/image/img-loading-record@2x.png'></image>
+      <text>稍等，录音之旅马上开始</text>
+    </view>
+    <view class='footer'>
+      <canvas disable-scroll="true" canvas-id="Canvas1" class="canvas"></canvas>
+      <canvas disable-scroll="true" canvas-id="Canvas2" class="canvas"></canvas>
+      <canvas disable-scroll="true" canvas-id="Canvas3" class="canvas"></canvas>
+      <canvas disable-scroll="true" canvas-id="Canvas4" class="canvas"></canvas>
+    </view>
+  </view>
+  <image class='bg' src='{{RecordEntity.backgroundImage}}'></image>
+  <view wx:if='{{RecordEntity.themeId == 2}}' class='snow'></view>
+  <view class='m-main m-audio m-share'>
+    <view class='header'>
+      <view class='user'>
+        <view class='avatar'>
+          <image src='{{RecordEntity.userHeadImg}}'></image>
+          <view class='map {{isShowCity.status}}'><image class='m' src='{{Resource+"static/image/icon_location@2x.png"}}'></image>{{RecordEntity.location}}</view>
+        </view>
+        <text class='name' wx:if='{{RecordEntity.userName}}'>{{RecordEntity.userName}}的祝福声</text>
+      </view>
+      <view bindtap='PlayBgMusic' class='list take'>
+        <view class="vod go {{PlayAudioAction.method == 'play'?'play':''}}"></view>
+        <view class='icon {{rhythmCartoon.active}}'><view wx:for="{{42}}" wx:key="this"></view></view>
+        <text class='time'>{{PlayAudio.timer}}''</text>
+      </view>
+    </view>
+    <view class='footer'>
+      <view bindtap='wantPlay' class='btn'>我也要玩</view>
+    </view>
+  </view>
+  <view class='m-bgmusic'>
+      <audio src="{{PlayAudio.audioUrl}}" action="{{PlayAudioAction}}" bindended="endPlayAudio"  bindtimeupdate="playDurationCtr" id="recordHearMusic"></audio>  
+      <audio src="{{PlayAudio.themeBackgroundMusicUrl}}" action="{{BgPlayAction}}" id="recordHearAudio" loop></audio>  
+  </view>
+</view>

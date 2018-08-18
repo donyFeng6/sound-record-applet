@@ -1,0 +1,23 @@
+{
+  "pages":[
+    "src/index"
+  ],
+  "subPackages": [
+    {
+      "root": "src/pages/",
+      "pages": [
+        "index",
+        "recorder",
+        "editAudio",
+        "myRecord",
+        "createRecord",
+        "shar"
+      ]
+    }],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "声控星球",
+    "navigationBarTextStyle":"black"
+  }
+}

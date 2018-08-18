@@ -1,0 +1,35 @@
+/* src/pages/shar.wxss */
+@import '../static/css/global.wxss';
+page{width:100vw; height: 100vh; overflow: hidden;}
+.g-container{position: fixed; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; }
+
+.m-share .header .user{text-align: center;}
+.m-share .header .user .avatar{display: block; margin: 0 auto 1rem;}
+.m-share .header .user .name{display: inline-block; padding:.1rem .8rem .4rem; border-radius: 3rem; background-color:rgba(0, 0, 0, 0.2);font-size: 1.1rem; color: #FFFFFF ;}
+.m-share .header .take{margin-top: 10vh;}
+.m-share .footer{position: absolute; left: 0; bottom: 15vh; width: 100%;}
+.m-share .footer .btn{width:10rem; height: 3rem; line-height:2.8rem; display: block; margin: 0 auto;font-size: 1.1rem;}
+.m-share .footer .btn:active{background-image: url(https://api.pigbanker.com/audioRecordingResource/static/image/btn_join_active@2x.png);}
+
+
+ 
+@-webkit-keyframes line-scale-pulse-out-rapid {
+  0% { -webkit-transform: scaley(1); transform: scaley(1); }
+  55% {-webkit-transform: scaley(0.3); transform: scaley(0.3); }
+  90% {-webkit-transform: scaley(1);transform: scaley(1); } }
+@keyframes line-scale-pulse-out-rapid {
+  0% {-webkit-transform: scaley(1);transform: scaley(1); }
+  55% {-webkit-transform: scaley(0.3);transform: scaley(0.3); }
+  90% {-webkit-transform: scaley(1);transform: scaley(1); } }
+
+.rapid > view {
+  display: inline-block;width: 2px;height: 38px;border-radius: 2px;
+  margin: 2px; -webkit-animation-fill-mode: both; animation-fill-mode: both; background-color: #279fcf;
+  -webkit-animation: line-scale-pulse-out-rapid 1.5s 0s infinite cubic-bezier(.11, .49, .38, .78);
+          animation: line-scale-pulse-out-rapid 1.5s 0s infinite cubic-bezier(.11, .49, .38, .78); }
+.m-share .header .list .rapid.stop{position: absolute; top:20%; left: 17%; width: 66%; height: 60%; background: url(https://api.pigbanker.com/audioRecordingResource/static/image/img_audio_line@2x.png); background-repeat: repeat-x; background-position: center; background-size: contain;}          
+.m-share .header .list .rapid.stop > view{display: none; animation-iteration-count:unset;}
+.rapid > view:nth-child(2),.rapid >view:nth-child(4),.rapid >view:nth-child(6),.rapid >view:nth-child(8),.rapid >view:nth-child(10),.rapid >view:nth-child(12),.rapid >view:nth-child(14),.rapid >view:nth-child(16),.rapid >view:nth-child(18),.rapid >view:nth-child(20),.rapid >view:nth-child(22),.rapid >view:nth-child(24),.rapid >view:nth-child(26),.rapid >view:nth-child(28),.rapid >view:nth-child(32),.rapid >view:nth-child(34),.rapid >view:nth-child(36),.rapid >view:nth-child(38){
+    -webkit-animation-delay: 0.25s !important; animation-delay: 0.25s !important; }
+.rapid > view:nth-child(1),.rapid > view:nth-child(5),.rapid >view:nth-child(9),.rapid >view:nth-child(13),.rapid >view:nth-child(17),.rapid >view:nth-child(21),.rapid >view:nth-child(25),.rapid >view:nth-child(29),.rapid >view:nth-child(31),.rapid >view:nth-child(35){
+    -webkit-animation-delay: 0.5s !important; animation-delay: 0.5s !important; }

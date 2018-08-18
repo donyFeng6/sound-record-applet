@@ -1,0 +1,34 @@
+<!--src/pages/index.wxml-->
+<view class='g-container'>
+  <image class='bg' wx:if='{{ThemeByList.theme.backgroundImage}}' src='{{Resource+ThemeByList.theme.backgroundImage}}'></image>
+  <view class='m-main m-Theme'>
+    <view class='header'>
+      <navigator hover-class='none' open-type="reLaunch" class='btn' url='/src/index'><image src='{{Resource}}static/image/icon_home_normal@2x.png'></image></navigator>
+      <image class='avatar' src='{{UserInfo.avatarUrl}}'></image>
+    </view>
+    <view class='entity'>
+      <view class='title'>{{ThemeByList.theme.title}}<view bindtap='exchangeOnce' class='trade'>换</view></view>
+      <view class='t'>
+        <view class='c' wx:for="{{ThemeByList.theme.textlist}}" wx:key="this" wx:for-item="text">{{text}}</view>
+      </view>
+    </view>
+    <view class='hotList'>
+      <view class='hot'>热门推荐
+      <navigator url='/src/pages/recorder?id={{ThemeByList.theme.id}}&themeTextId={{ThemeByList.theme.id}}' class='btn'>我也要录</navigator>
+      </view>
+      <scroll-view class='recommend' scroll-y lower-threshold="50" bindscrolltolower="MyRecordScroll">
+        <view class="list" wx:for="{{ThemeByList.list}}" wx:key="this" wx:for-item="item">
+          <image class="avatar" src='{{item.avatarUrl}}'></image>
+          <view class="title">{{item.title}}<text class='sup'>{{item.filterT}}</text></view>
+          <view class="d">
+            <image class='icon' src='{{Resource}}static/image/icon_play_number.png'></image>{{item.playCount}}次
+            <text class='t'>{{item.duration}}</text>
+          </view>
+          <view bindtap='PlayAudio' data-key='{{index}}' class="vod go {{item.play == 'play'?'play':''}}"></view>
+        </view>
+      </scroll-view>
+    </view>
+    <audio src="{{PlayAudio.recordUrl}}" action="{{PlayAudioAction}}" bindtimeupdate="playDurationCtr" bindended="endPlayAudio"  id="testHearMusic"></audio>
+    <audio src="{{PlayAudio.bgAudioUrl}}" action="{{bgPlayAudioAction}}" id="bgHearAudio" loop></audio>
+  </view>
+</view>

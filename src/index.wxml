@@ -1,0 +1,16 @@
+<!--src/index.wxml-->
+<view class='g-container'>
+  <view class='m-main m-home'>
+    <image class='bg' src='{{HotThemeList.background}}'></image>
+    <view wx:if='{{HotThemeList.list[0].id == 2}}' class='snow'></view>  
+    <view class='item'>
+      <navigator class='card' wx:for="{{HotThemeList.list}}" wx:key="this" wx:for-item="k" style='background-image:url({{Resource+k.iconBackgroundImage}})' url='/src/pages/index?id={{k.id}}'><image class='icon' src='{{Resource+k.icon}}'></image>{{k.title}}</navigator>
+    </view>
+    <navigator url='/src/pages/index?id={{HotThemeList.list[0].id}}' class='record'>
+      <image class='icon' src='{{Resource}}static/image/img_recording_normal@2x.png'></image>
+      点击录音
+    </navigator>
+    <navigator url='/src/pages/myRecord' class='my' hover-class='myRecord'><image class='icon btn' src='{{Resource}}static/image/btn_my_home@2x.png'></image></navigator>
+    <image class='bg-wave' src='{{Resource}}static/image/img_bottom@2x.png'></image>  
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<!--src/pages/createRecord.wxml-->
+<view class='g-container'>
+  <image class='bg' src='{{RecordEntity.backgroundImage}}'></image>
+  <view class='m-main m-audio m-share'>
+    <view class='header'>
+      <view bindtap='PlayBgMusic' class='list take'>
+        <view class="vod go {{PlayAudioAction.method == 'play'?'play':''}}"></view>
+        <view class='icon {{rhythmCartoon.active}}'><view wx:for="{{42}}" wx:key="this"></view></view>
+        <text class='time'>{{PlayAudio.timer}}''</text>
+      </view>
+      <view class='avatar'>
+        <image src='{{RecordEntity.userHeadImg}}'></image>
+        <view class='map {{isShowCity.status}}'>
+          <image class='m' src='{{Resource+"static/image/icon_location@2x.png"}}'></image>
+          <text>{{isShowCity.loca}}</text>
+        </view>
+      </view>
+      <view class='loca {{isShowCity.active}}'>
+        <view class='city'>
+          <view bindtap='ShowMapShield' data-type='0' class='btn'>不显示位置</view>
+          <view bindtap='ShowMapShield' data-type='1' class='btn'>{{RecordEntity.location}}</view>
+        </view>
+        <view bindtap='hideMapShield' class='shield'></view>
+      </view>
+    </view>
+    <view class='footer'>
+      <button open-type="share" class='btn'>分享</button>
+      <navigator class='btn redo' url='/src/pages/index'><text>再录</text>一个</navigator>
+    </view>
+  </view>
+  <view class='m-bgmusic'>
+    <audio src="{{PlayAudio.audioUrl}}" action="{{PlayAudioAction}}" bindended="endPlayAudio"  bindtimeupdate="playDurationCtr" id="recordHearMusic"></audio>
+    <audio src="{{PlayAudio.themeBackgroundMusicUrl}}" action="{{BgPlayAction}}" id="recordHearAudio" loop></audio>
+  </view>
+</view>
+

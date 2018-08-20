@@ -18,7 +18,7 @@
             <view bindtap='ActionSheet' data-key='{{index}}' class='go'><image class='icon' src='{{Resource}}static/image/icon_more@2x.png'></image></view>
           </view>
         </view>
-        <button class='btn' open-type='getUserInfo' >需要获取授权</button>
+
       </scroll-view>
     </view>
     <audio src="{{PlayAudio.recordUrl}}" action="{{PlayAudioAction}}" bindtimeupdate="playDurationCtr" bindended="endPlayAudio"  id="testHearMusic"></audio>

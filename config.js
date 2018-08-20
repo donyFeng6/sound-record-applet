@@ -1,12 +1,12 @@
 /**
  * 配置文件
- */
+ */ 
 const host = `https://api.pigbanker.com`, Path = `record-applet`;
 class ConfigGlobal {
   constructor(){
     var _self = this
     _self.URL = _self.URLS()
-    _self.Resource = `${host}/audioRecordingResource/`
+    _self.Resource = `${host}/audioRecordingResource/` //资源地址配置
   }
   // 接口地址
   URLS(){

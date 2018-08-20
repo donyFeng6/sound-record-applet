@@ -11,39 +11,39 @@ Page({
   data: {
     Resource: GlobalConfig.Resource,
     HotThemeList: {
-      background: GlobalConfig.Resource + 'static/bg/bg_1.jpg', list: [{
+      background:'./static/image/bg/bg_1.jpg', list: [{
         "id": 1,
         "title": "情人节祝福",
-        "icon": "pictures/2018/1/31/1517378773870.png",
-        "iconBackgroundImage": "pictures/2018/1/31/1517390557925.png",
-        "backgroundImage": "pictures/2018/1/30/1517298506024.jpg",
+        "icon": "./static/image/icon_valentine_home@2x.png",
+        "iconBackgroundImage": "./static/image/bg_valentine_home@2x.png",
+        "backgroundImage": "./static/image/bg/bg_1.jpg",
         "backgroundTitle": "情人节",
         "isHot": 1,
         "sort": 1
       },{
           "id": 2,
           "title": "元宵快乐",
-          "icon": "pictures/2018/1/31/1517378750103.png",
-          "iconBackgroundImage":"pictures/2018/1/31/1517390557925.png",
-          "backgroundImage": "pictures/2018/2/1/1517485547867.png",
+          "icon": "./static/image/icon_yuanxiao_home@2x.png",
+          "iconBackgroundImage":"./static/image/bg_yuanxiao_home@2x.png",
+          "backgroundImage": "./static/image/bg/bg_2.jpg",
           "backgroundTitle": "元宵",
           "isHot": 1,
           "sort": 2
       },{
           "id": 3,
           "title": "新年祝福",
-          "icon": "pictures/2018/1/31/1517378730150.png",
-          "iconBackgroundImage": "pictures/2018/1/31/1517390557925.png",
-          "backgroundImage": "pictures/2018/2/2/1517564565451.png",
+          "icon": "./static/image/icon_new_year@2x.png",
+          "iconBackgroundImage": "./static/image/bg_birthday_home@2x.png",
+          "backgroundImage": "./static/image/bg/bg_3.jpg",
           "backgroundTitle": "新年祝语",
           "isHot": 1,
           "sort": 2
       },{
           "id": 4,
           "title": "生日祝语",
-          "icon": "pictures/2018/1/31/1517390530820.png",
-          "iconBackgroundImage": "pictures/2018/1/31/1517390557925.png",
-          "backgroundImage": "pictures/2018/1/31/1517388289440.png",
+          "icon": "./static/image/icon_birthday_home@2x.png",
+          "iconBackgroundImage": "./static/image/bg_valentine_home@2x.png",
+          "backgroundImage": "./static/image/bg/bg_4.jpg",
           "backgroundTitle": "生日快乐",
           "isHot": 1,
           "sort": 2

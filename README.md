@@ -12,9 +12,5 @@
 
 图片预览
 
-<img width="19%" src="preview/preview-pictrue-1.png">
-<img width="19%" src="preview/preview-pictrue-2.png">
-<img width="19%" src="preview/preview-pictrue-3.png">
-<img width="19%" src="preview/preview-pictrue-4.png">
-<img width="19%" src="preview/preview-pictrue-5.png">
+<img width="19%" src="preview/preview-pictrue-1.png"><img width="19%" src="preview/preview-pictrue-2.png"><img width="19%" src="preview/preview-pictrue-3.png"><img width="19%" src="preview/preview-pictrue-4.png"><img width="19%" src="preview/preview-pictrue-5.png">
 

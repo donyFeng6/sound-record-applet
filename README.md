@@ -1,6 +1,6 @@
 # 微信魔音祝语小程序
  
-微信小程序实现，小程序录音功能，魔音变音。
+###### 微信小程序实现，小程序录音功能，魔音变音。
 
 根据节日选择需要录制的节日祝福语，选择不同的祝语，可是是开心，共同的回忆或者是行走的段子手。
 
@@ -10,7 +10,7 @@
 
 
 
-图片预览
+###### 图片预览
 
 <img width="19%" src="preview/preview-pictrue-1.png"><img width="19%" src="preview/preview-pictrue-2.png"><img width="19%" src="preview/preview-pictrue-3.png"><img width="19%" src="preview/preview-pictrue-4.png"><img width="19%" src="preview/preview-pictrue-5.png">
 
